@@ -119,7 +119,7 @@ async fn store_token(
     )
     .execute(transaction.deref_mut())
     .await
-    .map_err(|e| StoreTokenError(e))?;
+    .map_err(StoreTokenError)?;
 
     Ok(())
 }
